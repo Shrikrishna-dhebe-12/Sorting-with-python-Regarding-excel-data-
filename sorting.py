@@ -142,7 +142,7 @@ with pd.ExcelWriter(
             if col not in pivot.columns:
                 pivot[col] = pd.NA
 
-        # Fill missing category percentile with row maximum percentile
+        
         pivot[rank_cols] = pivot[rank_cols].apply(
             lambda row: row.fillna(row.max()),
             axis=1
@@ -170,7 +170,7 @@ with pd.ExcelWriter(
             )
         )
 
-        # R2 columns (Stage-II data not available)
+        
         pivot["OPEN_R2"] = pivot["OPEN_R1"]
         pivot["EWS_R2"] = pivot["EWS_R1"]
         pivot["SC_R2"] = pivot["SC_R1"]
